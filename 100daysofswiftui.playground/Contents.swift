@@ -59,3 +59,43 @@ var captainFirstTeam2 = team.sorted(by: { (name1: String, name2: String) -> Bool
 })
 print(team)
 print(captainFirstTeam2)
+
+
+//closure shorthand
+let reverseTeam = team.sorted { $0 > $1 }
+print(reverseTeam)
+
+//when to use shorthand
+let tOnly = team.filter { $0.hasPrefix("T") }
+print(tOnly)
+
+let uppercaseTeam = team.map { $0.uppercased() }
+print(uppercaseTeam)
+
+//function as arguments
+func doImportantWork(first: () -> Void, second: () -> Void, third: () -> Void) {
+    print("About to start first work")
+    first()
+    print("About to start second work")
+    second()
+    print("About to start third work")
+    third()
+    print("Done!")
+}
+
+doImportantWork {
+    print("This is the first work")
+} second: {
+    print("This is the second work")
+} third: {
+    print("This is the third work")
+}
+
+//checkpoint 5
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+let number = 1
+number.isMultiple(of: 2)
+//// filter out even number
+let luckyOddnumbers = { $0.isMultiple(of: 2) }
+print(luckyOddnumbers)
