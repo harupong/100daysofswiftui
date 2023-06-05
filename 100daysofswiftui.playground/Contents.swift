@@ -126,3 +126,18 @@ extension Book {
 
 let andy1 = Book(title: "The Martians", pageCount: 720)
 let andy2 = Book(title: "Project Hail mary", pageCount: 1200, readingHours: 30)
+
+//protocol extensions
+extension Collection {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
+}
+
+let drivers = ["tsunoda", "sainz", "alonso"]
+if drivers.isNotEmpty {
+    print("Drivers count: \(drivers.count)")
+}
+
+//checkpoint8
+
